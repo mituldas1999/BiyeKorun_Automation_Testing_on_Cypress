@@ -1,8 +1,8 @@
 describe("User can register successfully", () => {
-    it.skip("User should register successfully", () => {
+    it("User should register successfully", () => {
       cy.request({
         method: "POST",
-        url: "https://staging-api.biyekorun.us/user/register",
+        url: "https://api.biyekorun.us/api/user/register",
         body: {
           email: "test5@gmail.com",
           firstName: "Ashraf",

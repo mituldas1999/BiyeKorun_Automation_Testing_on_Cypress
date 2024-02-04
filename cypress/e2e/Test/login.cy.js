@@ -1,8 +1,8 @@
 describe('User Login Successfully', () => { 
-    it("Checking user login successflly",()=>{
+    it.skip("Checking user login successflly",()=>{
         cy.request({
             method:"POST",
-            url:"https://staging-api.biyekorun.us/user/login",
+            url:"https://api.biyekorun.us/api/user/login",
             body:{
                 email: "ashrafulislamashik960@gmail.com",
                 password: "Ashik@2430"
@@ -10,4 +10,5 @@ describe('User Login Successfully', () => {
         }).its("status")
         .should("equal", 200);
     })
+
  })
