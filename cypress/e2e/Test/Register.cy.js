@@ -1,5 +1,5 @@
 describe("User can register successfully", () => {
-    it.skip("User should register successfully", () => {
+    it("User should register successfully", () => {
       cy.request({
         method: "POST",
         url: "https://api.biyekorun.us/api/user/register",

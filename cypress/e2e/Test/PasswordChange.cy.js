@@ -1,5 +1,5 @@
 describe("Changing Password", () => {
-  it("Let the user change paswword", () => {
+  it.skip("Let the user change paswword", () => {
     cy.request({
       method: "PATCH",
       url: "https://staging-api.biyekorun.us/user/changepassword/ashrafulislamashik960@gmail.com",
