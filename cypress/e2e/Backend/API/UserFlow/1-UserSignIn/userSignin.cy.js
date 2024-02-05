@@ -8,8 +8,13 @@ describe("Get Auth Token", () => {
         password: "Ashik@2430",
       },
     }).then((response) => {
-      expect(response.status).to.eq(200); // Assert that the response status is 200 OK
-      cy.log("Token:", response.body.token); // Log the token (or however the token is returned in your response body)
+      expect(response.status).to.eq(200);
+      const accessToken = response.body.token.accessToken;
+
+      // Set the access token as an environment variable
+      Cypress.env("accessToken", accessToken);
+
+      cy.log(accessToken);
     });
   });
 });
