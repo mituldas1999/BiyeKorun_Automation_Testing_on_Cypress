@@ -2,7 +2,7 @@ describe("Get Auth Token", () => {
   it("should obtain an authentication token", () => {
     cy.request({
       method: "POST",
-      url: "https://staging-api.biyekorun.us/api/user/login",
+      url: "/api/user/login",
       body: {
         email: "ashrafulislamashik960@gmail.com",
         password: "Ashik@2430",
