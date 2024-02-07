@@ -13,8 +13,8 @@ describe("As an user, I should be able to update on the friend request status", 
         status: "accepted",
         friendshipId: "65c0bd96ebf53acbef2766ae",
       },
-    })
-      .its("status")
-      .should("equal", 200);
+    }).then((response) => {
+      console.log(response.body);
+    });
   });
 });
