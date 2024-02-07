@@ -31,13 +31,8 @@ describe("User should be able to update their hobbies", () => {
       .its("status")
       .should("equal", 201)
       .then((response) => {
-        // Log the response body
         cy.log("Response Body:", response);
-
-        // Add any additional assertions on the response body if needed
-        // For example, you can check specific properties in the response body
-
-        // ...
+        console.log("Response", response);
       });
   });
 });
