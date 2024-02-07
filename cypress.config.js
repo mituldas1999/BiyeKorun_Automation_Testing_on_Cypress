@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 require("dotenv").config();
 
 module.exports = defineConfig({
-  projectId: '8axud3',
+  projectId: "8axud3",
   e2e: {
     baseUrl: "https://staging-api.biyekorun.us",
     setupNodeEvents(on, config) {
@@ -10,7 +10,7 @@ module.exports = defineConfig({
     },
     env: {
       accessToken:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyNWYzNjE4ZDgzNDllNWI5OWZjOTkiLCJlbWFpbCI6Im1pdHVsZGFzNzUxQGdtYWlsLmNvbSIsInVzZXJJZCI6IkJLTFFVSzFSOFciLCJmaXJzdE5hbWUiOiJNaXR1bCIsImxhc3ROYW1lIjoiRGFzIiwicm9sZSI6InN0YWZmIiwiZ2VuZGVyIjoiTWFsZSIsInBhY2thZ2UiOiI2NTkyNWYzNjE4ZDgzNDllNWI5OWZjOTciLCJpYXQiOjE3MDcyODAxNjgsImV4cCI6MTcwNzM2NjU2OH0.0cBm_2OvyhSXIQtUK-15hIrihhW2va9S_1-8zfOYibw",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWMwNDUyZmViZjUzYWNiZWYyNzYwNmUiLCJlbWFpbCI6ImFzaHJhZnVsaXNsYW1hc2hpazk2MEBnbWFpbC5jb20iLCJ1c2VySWQiOiJCS0xTOEFYSFNDIiwiZmlyc3ROYW1lIjoiQXNoaWsgdGVzdGluZyIsImxhc3ROYW1lIjoiRGFzIiwicm9sZSI6InVzZXIiLCJnZW5kZXIiOiJNYWxlIiwicGFja2FnZSI6IjY1YzA0NTJmZWJmNTNhY2JlZjI3NjA2YyIsImlhdCI6MTcwNzMwNDA5MSwiZXhwIjoxNzA3MzkwNDkxfQ._eAx57-WCco7mkDRGsf0mbuY1oiiFbUIjhDBRl8NVJw",
     },
   },
 });

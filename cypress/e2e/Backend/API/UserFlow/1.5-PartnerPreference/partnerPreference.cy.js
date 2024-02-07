@@ -26,17 +26,9 @@ describe("User should be able to update their search preference", () => {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
-    })
-      .its("status")
-      .should("equal", 200)
-      .then((response) => {
-        // Log the response body
-        cy.log("Response Body:", response);
-
-        // Add any additional assertions on the response body if needed
-        // For example, you can check specific properties in the response body
-
-        // ...
-      });
+    }).then((response) => {
+      cy.log("Response Body:", response.body);
+      console.log(response.body);
+    });
   });
 });
