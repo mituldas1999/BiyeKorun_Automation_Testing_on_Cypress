@@ -39,6 +39,8 @@ Cypress.Commands.add("loginAndGetAccessToken", (email, password) => {
     .then((response) => {
       expect(response.status).to.eq(200);
       const accessToken = response.body.token.accessToken;
+      Cypress.env("accessToken", accessToken);
+      console.log(accessToken);
       return accessToken;
     });
 });

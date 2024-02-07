@@ -20,3 +20,10 @@ describe("Get Auth Token", () => {
     });
   });
 });
+
+// Your test file
+// describe("Get Auth Token", () => {
+//   it("should obtain an authentication token", () => {
+//     cy.loginAndGetAccessToken("ashrafulislamashik960@gmail.com", "Ashik@2430");
+//   });
+// });
