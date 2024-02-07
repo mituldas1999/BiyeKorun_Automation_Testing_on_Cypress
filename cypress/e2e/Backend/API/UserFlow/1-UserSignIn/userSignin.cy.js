@@ -13,6 +13,8 @@ describe("Get Auth Token", () => {
 
       // Set the access token as an environment variable
       Cypress.env("accessToken", accessToken);
+      console.log(response);
+      console.log(accessToken);
 
       cy.log(accessToken);
     });

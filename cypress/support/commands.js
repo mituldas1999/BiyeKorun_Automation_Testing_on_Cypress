@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// cypress/support/commands.js
+
+Cypress.Commands.add("loginAndGetAccessToken", (email, password) => {
+  return cy
+    .request({
+      method: "POST",
+      url: "/api/user/login",
+      body: {
+        email: email,
+        password: password,
+      },
+    })
+    .then((response) => {
+      expect(response.status).to.eq(200);
+      const accessToken = response.body.token.accessToken;
+      return accessToken;
+    });
+});
