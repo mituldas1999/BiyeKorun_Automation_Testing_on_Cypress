@@ -13,7 +13,7 @@ describe("As an user, I should be able to create Group", () => {
           "64eecac80620579ac6fb3204",
           "64eecac80620579ac6fb3204",
         ],
-        name: "fs", //Every to change group name
+        name: "fssffds", //Every to change group name
         description: "Channel/Group description",
         isPublic: true,
         isReadOnly: false,
