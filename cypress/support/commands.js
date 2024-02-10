@@ -44,3 +44,7 @@ Cypress.Commands.add("loginAndGetAccessToken", (email, password) => {
       return accessToken;
     });
 });
+
+beforeEach(() => {
+  cy.loginAndGetAccessToken("ashrafulislamashik960@gmail.com", "Ashik@2430");
+});

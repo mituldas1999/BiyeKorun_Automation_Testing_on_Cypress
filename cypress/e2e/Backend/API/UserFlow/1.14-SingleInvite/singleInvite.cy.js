@@ -8,7 +8,7 @@ describe("As an user,I should be able to see on the single invite", () => {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        recipient: "65643ae458b1b3bb5210f611",
+        recipient: "653ccfe0d43efb3921b7314b",
       },
     })
       .its("status")
