@@ -8,8 +8,8 @@ describe("As an user I should be able to get all the notifications", () => {
         Authorization: `Bearer ${accessToken}`,
       },
     }).then((response) => {
-      console.log(response.body.data);
-      cy.log(response.body.data);
+      const notificationId = response.body.data[0]._id;
+      console.log(response.body.data[0]);
     });
   });
 });
