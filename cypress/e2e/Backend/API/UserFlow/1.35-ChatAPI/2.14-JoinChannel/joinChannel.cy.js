@@ -1,4 +1,4 @@
-describe("As an user, I should be able to react on the message ", () => {
+describe("As an user, I should be able to join Channel", () => {
   let groupId; // Declare groupId variable
 
   // Read the group ID from the file before the test runs
@@ -7,7 +7,7 @@ describe("As an user, I should be able to react on the message ", () => {
       groupId = data.id; // Store the group ID in the variable
     });
   });
-  it("Checking if a user can react on the chat user or not", () => {
+  it("Checking if a user can join Channel user or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "PUT",
