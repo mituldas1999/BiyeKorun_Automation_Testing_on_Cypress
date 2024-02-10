@@ -45,6 +45,7 @@ Cypress.Commands.add("loginAndGetAccessToken", (email, password) => {
     });
 });
 
+//User Need to be change Email and Password
 beforeEach(() => {
   cy.loginAndGetAccessToken("ashrafulislamashik960@gmail.com", "Ashik@2430");
 });

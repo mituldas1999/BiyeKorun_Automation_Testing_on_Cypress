@@ -3,7 +3,7 @@
     "cypress": "^13.6.4"
   },
   "dependencies": {
-    "dotenv": "^16.4.1",
-    "faker": "^6.6.6"
+    "@faker-js/faker": "^8.4.1",
+    "dotenv": "^16.4.1"
   }
 }
