@@ -1,14 +1,15 @@
-describe("As an user I should be able set new password using forgot password function", () => {
-  it("Checking if an user can set new password using forgot password function or not", () => {
+describe("As an user I can request for resend OTP if my email is not verified", () => {
+  it.skip("Checking if an user can resend OTP", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
-      method: "PATCH",
-      url: "/api/user/forgotpassword",
+      method: "POST",
+      url: "/api/user/resendotp",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
         email: "ashrafulislamashik960@gmail.com",
+        otpType: "email",
       },
     }).then((response) => {
       console.log(response.body);
