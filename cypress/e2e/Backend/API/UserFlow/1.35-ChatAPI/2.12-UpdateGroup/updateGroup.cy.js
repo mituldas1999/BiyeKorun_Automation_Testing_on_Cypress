@@ -1,22 +1,33 @@
 describe("As an user, I should be able to Update Group", () => {
+  let groupId; // Declare groupId variable
+
+  // Read the group ID from the file before the test runs
+  before(() => {
+    cy.readFile("cypress/fixtures/groupId.json").then((data) => {
+      groupId = data.id; // Store the group ID in the variable
+    });
+  });
+
   it("Checking if a user can Update Group user or not", () => {
     const accessToken = Cypress.env("accessToken");
+
+    // Use the groupId variable here
     cy.request({
       method: "PATCH",
-      url: "/api/chat/channel/update/65c33507ebf53acbef276a6b",
+      url: `/api/chat/channel/update/${groupId}`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        name: "fs",
-        description: "Channel",
+        name: "Updated Group Name",
+        description: "Updated Channel Description",
         isPublic: true,
         isReadOnly: false,
-        avatar: "Avatar URL",
+        avatar: "Updated Avatar URL",
       },
     }).then((res) => {
-      console.log(res.body.channel._id);
-      cy.log(res.body.channel._id);
+      expect(res.status).to.eq(200); // Verify that the request was successful
+      cy.log(`Updated group ID: ${res.body.channel._id}`); // Log the updated group ID for confirmation
     });
   });
 });
