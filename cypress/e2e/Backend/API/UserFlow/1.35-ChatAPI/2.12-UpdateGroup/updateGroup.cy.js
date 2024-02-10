@@ -3,7 +3,7 @@ describe("As an user, I should be able to Update Group", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "PATCH",
-      url: "/api/chat/channel/update/65c33507ebf53acbef276a6b",
+      url: "/api/chat/channel/update/",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
