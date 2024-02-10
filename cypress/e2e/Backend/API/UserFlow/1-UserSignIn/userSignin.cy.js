@@ -5,7 +5,7 @@ describe("Get Auth Token", () => {
       url: "/api/user/login",
       body: {
         email: "ashrafulislamashik960@gmail.com",
-        password: "Ashik@2430",
+        password: "Ashik@2432",
       },
     }).then((response) => {
       expect(response.status).to.eq(200);

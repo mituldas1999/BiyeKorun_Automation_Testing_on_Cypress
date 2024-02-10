@@ -40,12 +40,11 @@ Cypress.Commands.add("loginAndGetAccessToken", (email, password) => {
       expect(response.status).to.eq(200);
       const accessToken = response.body.token.accessToken;
       Cypress.env("accessToken", accessToken);
-      console.log(accessToken);
       return accessToken;
     });
 });
 
 //User Need to be change Email and Password
 beforeEach(() => {
-  cy.loginAndGetAccessToken("ashrafulislamashik960@gmail.com", "Ashik@2430");
+  cy.loginAndGetAccessToken("ashrafulislamashik960@gmail.com", "Ashik@2432");
 });
