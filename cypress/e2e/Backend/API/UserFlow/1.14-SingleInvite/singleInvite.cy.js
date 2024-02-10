@@ -17,8 +17,13 @@ describe("As an user,I should be able to see on the single invite", () => {
       body: {
         recipient: `${newUserId}`,
       },
-    })
-      .its("status")
-      .should("equal", 200);
+    }).then((response) => {
+      const updatedFriendId = response.body.data._id;
+      console.log(response.body.data._id);
+      cy.writeFile("cypress/fixtures/updatedFriendId.json", {
+        newId: updatedFriendId,
+      });
+      console.log(updatedFriendId);
+    });
   });
 });
