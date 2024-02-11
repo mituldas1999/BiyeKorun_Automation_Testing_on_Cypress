@@ -3,7 +3,7 @@ describe("As an user I should be able to delete the picture I want", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "DELETE",
-      url: "/api/user/deleteImage/65c35559ebf53acbef276b4d",
+      url: "/api/user/deleteImage/65c877a28323ed5398beeb30",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
