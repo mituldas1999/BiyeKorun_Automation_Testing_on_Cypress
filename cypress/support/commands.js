@@ -26,6 +26,8 @@
 
 // cypress/support/commands.js
 
+import "cypress-file-upload";
+
 Cypress.Commands.add("loginAndGetAccessToken", (email, password) => {
   return cy
     .request({
