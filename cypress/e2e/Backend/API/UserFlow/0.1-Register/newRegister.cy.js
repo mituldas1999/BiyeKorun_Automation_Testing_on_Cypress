@@ -18,9 +18,10 @@ describe("A user should be able to register in the browser", () => {
         password: "Ashik@2430",
       },
     }).then((response) => {
-      const newUserId = response.body.data.id;
+      const newUserId = response.body.data._id;
       cy.writeFile("cypress/fixtures/userId.json", { userId: newUserId });
-      console.log(newUserId);
+      const newUser = response.body.data.email;
+      cy.writeFile("cypress/fixtures/user.json", { userEmail: newUser });
     });
   });
 });
