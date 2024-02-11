@@ -4,6 +4,7 @@ describe("User can upload picture through API", () => {
 
     // Load the image file using cy.fixture()
     cy.fixture("images/happy.jpg", "base64").then((imageFile) => {
+      
       // Create a Blob object from the base64-encoded image file
       const blob = Cypress.Blob.base64StringToBlob(imageFile, "image/jpeg");
 
