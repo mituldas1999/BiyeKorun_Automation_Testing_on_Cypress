@@ -3,7 +3,7 @@ describe("As an user I should be able to see a single user information", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "GET",
-      url: "/api/user/user-profile/65c0452febf53acbef27606e",
+      url: "/api/user/user-profile/65925f3618d8349e5b99fc99",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

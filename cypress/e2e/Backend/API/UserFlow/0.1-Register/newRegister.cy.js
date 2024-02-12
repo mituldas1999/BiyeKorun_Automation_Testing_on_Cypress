@@ -22,6 +22,7 @@ describe("A user should be able to register in the browser", () => {
       cy.writeFile("cypress/fixtures/userId.json", { userId: newUserId });
       const newUser = response.body.data.email;
       console.log(newUserId);
+      cy.log(newUser);
       cy.writeFile("cypress/fixtures/user.json", { userEmail: newUser });
     });
   });

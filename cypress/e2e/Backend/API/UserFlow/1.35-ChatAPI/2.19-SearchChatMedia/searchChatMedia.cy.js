@@ -2,7 +2,7 @@ describe("As an user, I should be able to Search Chats Media on the message ", (
   let newUserId; // Declare newUserId variable
   before(() => {
     cy.readFile("cypress/fixtures/userId.json").then((data) => {
-      newUserId = data.userId; // Store the group ID in the variable
+      newUserId = data.userId; //
       console.log(newUserId);
     });
   });

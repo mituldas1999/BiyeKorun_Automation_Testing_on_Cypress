@@ -2,7 +2,7 @@ describe("As an user, I should be able to search on the chat user", () => {
   let groupId;
   before(() => {
     cy.readFile("cypress/fixtures/groupId.json").then((data) => {
-      groupId = data.id; // Store the group ID in the variable
+      groupId = data.id; //
     });
   });
   it("Checking if a user can search on the chat user or not", () => {

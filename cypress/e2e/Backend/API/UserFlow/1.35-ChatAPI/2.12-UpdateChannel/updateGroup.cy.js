@@ -4,7 +4,7 @@ describe("As an user, I should be able to Update Group", () => {
   // Read the group ID from the file before the test runs
   before(() => {
     cy.readFile("cypress/fixtures/groupId.json").then((data) => {
-      groupId = data.id; // Store the group ID in the variable
+      groupId = data.id; //
     });
   });
 

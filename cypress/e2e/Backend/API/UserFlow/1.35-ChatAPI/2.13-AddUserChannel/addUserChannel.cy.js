@@ -3,12 +3,12 @@ describe("As an user, I should be able to add user on the Group", () => {
   let groupId;
   before(() => {
     cy.readFile("cypress/fixtures/userId.json").then((data) => {
-      newUserId = data.userId; // Store the group ID in the variable
+      newUserId = data.userId; //
       console.log(newUserId);
       cy.log(newUserId);
     });
     cy.readFile("cypress/fixtures/groupId.json").then((data) => {
-      groupId = data.id; // Store the group ID in the variable
+      groupId = data.id; //
     });
   });
   it("Checking if a user can add user on the Group user or not", () => {

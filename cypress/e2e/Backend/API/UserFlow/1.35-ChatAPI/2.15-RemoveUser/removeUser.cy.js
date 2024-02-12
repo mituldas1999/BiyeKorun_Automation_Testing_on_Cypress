@@ -3,11 +3,11 @@ describe("As an user I can remove a user from channel", () => {
   let groupId;
   before(() => {
     cy.readFile("cypress/fixtures/chatUserId.json").then((data) => {
-      newUserChatId = data.userChatId; // Store the group ID in the variable
+      newUserChatId = data.userChatId; //
       console.log(newUserChatId);
     });
     cy.readFile("cypress/fixtures/groupId.json").then((data) => {
-      groupId = data.id; // Store the group ID in the variable
+      groupId = data.id; //
     });
   });
   it("Checking if an user can remove an user from a channel or not", () => {

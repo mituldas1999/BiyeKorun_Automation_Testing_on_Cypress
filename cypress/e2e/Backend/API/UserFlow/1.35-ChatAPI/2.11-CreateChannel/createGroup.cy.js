@@ -3,7 +3,7 @@ describe("As an user, I should be able to create Group", () => {
   let newUserId;
   before(() => {
     cy.readFile("cypress/fixtures/userId.json").then((data) => {
-      newUserId = data.userId; // Store the group ID in the variable
+      newUserId = data.userId;
       console.log(newUserId);
       cy.log(newUserId);
     });
@@ -19,7 +19,11 @@ describe("As an user, I should be able to create Group", () => {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        users: [`${newUserId}`],
+        users: [
+          "64eecac80620579ac6fb3204",
+          "64eecac80620579ac6fb3204",
+          "64eecac80620579ac6fb3204",
+        ],
         name: groupname, //Every to change group nameS
         description: "Channel/Group description",
         isPublic: true,

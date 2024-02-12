@@ -3,11 +3,11 @@ describe("As an user I can leave a chat group", () => {
   let groupId;
   before(() => {
     cy.readFile("cypress/fixtures/userId.json").then((data) => {
-      newUserId = data.userId; // Store the group ID in the variable
+      newUserId = data.userId; //
       console.log(newUserId);
     });
     cy.readFile("cypress/fixtures/groupId.json").then((data) => {
-      groupId = data.id; // Store the group ID in the variable
+      groupId = data.id; //
     });
   });
   it("Checking if an user can leave a chat group or not", () => {
