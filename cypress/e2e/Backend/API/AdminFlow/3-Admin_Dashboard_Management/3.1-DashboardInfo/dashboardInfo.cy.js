@@ -1,9 +1,9 @@
-describe("As an admin I should be able to see all the staff information", () => {
-  it("Checking if an admin can get all the information or not", () => {
+describe("As an admin, I can see the dashboard information", () => {
+  it("Checking if an admin can see the dashboard information or not", () => {
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
       method: "GET",
-      url: "/api/staff/role/get",
+      url: "/api/dashboard/info",
       headers: {
         Authorization: `Bearer ${adminAccessToken}`,
       },

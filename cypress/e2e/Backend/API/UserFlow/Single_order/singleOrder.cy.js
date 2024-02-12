@@ -1,8 +1,8 @@
 describe("As an user I should be able to show a single order item details", () => {
-  let orderId
+  let orderId;
   before(() => {
     cy.readFile("cypress/fixtures/orderId.json").then((data) => {
-      orderId = data.newOrderId; // Store the group ID in the variable
+      orderId = data.newOrderId; //
     });
   });
   it("Checking if an user can show a single order item details", () => {

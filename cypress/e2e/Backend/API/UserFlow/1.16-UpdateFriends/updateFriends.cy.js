@@ -2,7 +2,7 @@ describe("As an user, I should be able to update on the friend request status", 
   let updatedFriendId;
   before(() => {
     cy.readFile("cypress/fixtures/updatedFriendId.json").then((data) => {
-      updatedFriendId = data.newId; // Store the group ID in the variable
+      updatedFriendId = data.newId; //
     });
   });
   it("Checking if the user can update the request status", () => {

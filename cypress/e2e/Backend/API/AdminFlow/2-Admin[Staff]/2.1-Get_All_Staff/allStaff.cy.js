@@ -10,7 +10,7 @@ describe("As a user I shuould be able see all staff information", () => {
     }).then((response) => {
       console.log(response.body.data.staffs[0]._id);
       const staffId = response.body.data.staffs[1].user.id;
-      cy.log(staffId); // Store the group ID in the variable
+      cy.log(staffId); //
       cy.writeFile("cypress/fixtures/staffId.json", { AdminStaffId: staffId });
     });
   });

@@ -2,7 +2,7 @@ describe("As an user I should get OTP for mobile update", () => {
   let newUserEmail; // Declare newUserId variable
   before(() => {
     cy.readFile("cypress/fixtures/user.json").then((data) => {
-      newUserEmail = data.userEmail; // Store the group ID in the variable
+      newUserEmail = data.userEmail; //
       console.log(newUserEmail);
     });
   });

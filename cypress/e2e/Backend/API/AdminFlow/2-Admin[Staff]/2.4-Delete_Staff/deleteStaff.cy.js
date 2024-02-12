@@ -3,7 +3,7 @@ describe("User should be able to Delete admin Staff", () => {
   before(() => {
     cy.readFile("cypress/fixtures/staffId.json").then((data) => {
       staffId = data.AdminStaffId;
-      cy.log(staffId); // Store the group ID in the variable
+      cy.log(staffId); //
     });
   });
   //Please Remove Skip ................

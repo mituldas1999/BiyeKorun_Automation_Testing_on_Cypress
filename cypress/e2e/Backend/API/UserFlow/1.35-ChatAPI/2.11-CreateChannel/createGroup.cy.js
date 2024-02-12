@@ -1,5 +1,13 @@
 import { faker } from "@faker-js/faker";
 describe("As an user, I should be able to create Group", () => {
+  let newUserId;
+  before(() => {
+    cy.readFile("cypress/fixtures/userId.json").then((data) => {
+      newUserId = data.userId;
+      console.log(newUserId);
+      cy.log(newUserId);
+    });
+  });
   it("Checking if a user can create Group user or not", () => {
     const accessToken = Cypress.env("accessToken");
     const groupname = faker.internet.userName();
@@ -22,8 +30,8 @@ describe("As an user, I should be able to create Group", () => {
         isReadOnly: false,
       },
     }).then((res) => {
-      cy.log(res.body.chat._doc._id);
-      const groupId = res.body.chat._doc._id;
+      console.log(res.body.chat._id);
+      const groupId = res.body.chat._id;
       // set the group id dynamically to access it from any where by using cy.readFile assertion method
       cy.writeFile("cypress/fixtures/groupId.json", { id: groupId });
     });

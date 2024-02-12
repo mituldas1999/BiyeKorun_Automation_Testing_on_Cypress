@@ -1,25 +1,25 @@
-describe("As an user I can remove a user from channel", () => {
-  let newUserChatId;
+describe("As an user I can leave a chat group", () => {
+  let newUserId;
   let groupId;
   before(() => {
-    cy.readFile("cypress/fixtures/chatUserId.json").then((data) => {
-      newUserChatId = data.userChatId; //
-      console.log(newUserChatId);
+    cy.readFile("cypress/fixtures/userId.json").then((data) => {
+      newUserId = data.userId; //
+      console.log(newUserId);
     });
     cy.readFile("cypress/fixtures/groupId.json").then((data) => {
       groupId = data.id; //
     });
   });
-  it("Checking if an user can remove an user from a channel or not", () => {
+  it("Checking if an user can leave a chat group or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "PATCH",
-      url: `/api/chat/channel/remove-user/${groupId}`,
+      url: `/api/chat/channel/leave/${groupId}`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        member: `${newUserChatId}`,
+        user: `${newUserId}`,
       },
     }).then((response) => {
       console.log(response.body);

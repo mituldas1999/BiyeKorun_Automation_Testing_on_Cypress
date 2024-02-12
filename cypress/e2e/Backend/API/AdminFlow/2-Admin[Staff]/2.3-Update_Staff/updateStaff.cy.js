@@ -4,7 +4,7 @@ describe("User should be able to update admin Staff", () => {
   before(() => {
     cy.readFile("cypress/fixtures/staffId.json").then((data) => {
       staffId = data.AdminStaffId;
-      cy.log(staffId); // Store the group ID in the variable
+      cy.log(staffId); //
     });
   });
   it("Checking if an user can update admin Staff", () => {
