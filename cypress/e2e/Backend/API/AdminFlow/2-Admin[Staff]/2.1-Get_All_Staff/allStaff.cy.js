@@ -8,9 +8,9 @@ describe("As a user I shuould be able see all staff information", () => {
         Authorization: `Bearer ${adminAccessToken}`,
       },
     }).then((response) => {
-      console.log(response.body.data.staffs[0].user.id);
-      cy.log(response.body.data.staffs[0]._id);
-      const staffId = response.body.data.staffs[0].user.id;
+      console.log(response.body.data.staffs[0]._id);
+      const staffId = response.body.data.staffs[1].user.id;
+      cy.log(staffId); // Store the group ID in the variable
       cy.writeFile("cypress/fixtures/staffId.json", { AdminStaffId: staffId });
     });
   });

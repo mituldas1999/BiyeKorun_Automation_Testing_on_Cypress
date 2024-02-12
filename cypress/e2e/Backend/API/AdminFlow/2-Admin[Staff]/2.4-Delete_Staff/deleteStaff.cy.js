@@ -6,6 +6,7 @@ describe("User should be able to Delete admin Staff", () => {
       cy.log(staffId); // Store the group ID in the variable
     });
   });
+  //Please Remove Skip ................
   it.skip("Checking if an user can Delete admin Staff", () => {
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
