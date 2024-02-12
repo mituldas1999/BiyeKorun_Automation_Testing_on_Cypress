@@ -1,4 +1,11 @@
 describe("User should be able to create admin Staff", () => {
+  let newUser;
+  before(() => {
+    cy.readFile("cypress/fixtures/user.json").then((data) => {
+      newUser = data.userEmail;
+      console.log(newUser);
+    });
+  });
   it("Checking if an user can create admin Staff", () => {
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
@@ -8,9 +15,9 @@ describe("User should be able to create admin Staff", () => {
         Authorization: `Bearer ${adminAccessToken}`,
       },
       body: {
-        email: "dasia_nitzsche@hotmail.com",
+        email: `${newUser}`,
         firstName: "Ashraful",
-        lastName: "islamashik",
+        lastName: "Islam ashik",
         permission: ["64eadb6a5bd5576dd4df3cd8"],
         phone: {
           number: "1949338805",
@@ -21,9 +28,7 @@ describe("User should be able to create admin Staff", () => {
         password: "Ashik@2432",
       },
     }).then((response) => {
-      console.log(response.body.staff._id);
-      // const staffId = response.body.staff._id;
-      // cy.writeFile("cypress/fixtures/staffId.json", { AdminStaffId: staffId });
+      console.log(response.body);
     });
   });
 });
