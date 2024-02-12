@@ -1,4 +1,4 @@
-describe("User should be able to create admin Staff", () => {
+describe("Admin should be able to create Staff from the existing users", () => {
   let newUser;
   before(() => {
     cy.readFile("cypress/fixtures/user.json").then((data) => {
@@ -6,7 +6,7 @@ describe("User should be able to create admin Staff", () => {
       console.log(newUser);
     });
   });
-  it("Checking if an user can create admin Staff", () => {
+  it("Checking if an admin can create staff using existing users", () => {
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
       method: "POST",

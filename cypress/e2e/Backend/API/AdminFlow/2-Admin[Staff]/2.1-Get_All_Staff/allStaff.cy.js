@@ -1,5 +1,5 @@
-describe("As a user I shuould be able see all staff information", () => {
-  it("Seeing all the staff information", () => {
+describe("As an admin I should be able see all staff information", () => {
+  it("Checking if an admin can see all the staff information or not", () => {
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
       method: "GET",

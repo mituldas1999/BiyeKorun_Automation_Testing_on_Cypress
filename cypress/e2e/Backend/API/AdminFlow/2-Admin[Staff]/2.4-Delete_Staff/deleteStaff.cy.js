@@ -1,4 +1,4 @@
-describe("User should be able to Delete admin Staff", () => {
+describe("Admin should be able to Delete user Staff member", () => {
   let staffId;
   before(() => {
     cy.readFile("cypress/fixtures/staffId.json").then((data) => {
