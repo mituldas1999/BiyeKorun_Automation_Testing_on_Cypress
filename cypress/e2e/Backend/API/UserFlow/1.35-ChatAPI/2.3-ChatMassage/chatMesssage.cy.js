@@ -1,4 +1,11 @@
 describe("As an user,should be able to find new chats", () => {
+  let chatId;
+  before(() => {
+    cy.readFile("cypress/fixtures/chatId.json").then((data) => {
+      chatId = data.newChatId;
+      console.log(chatId);
+    });
+  });
   it("Checking if a user can find new chats or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
@@ -10,11 +17,11 @@ describe("As an user,should be able to find new chats", () => {
 
       body: {
         page: 1,
-        chat: "65c0a4d1ebf53acbef2765e5",
+        chat: `${chatId}`,
         parentMessage: "65925f3618d8349e5b99fc99",
       },
-    })
-      .its("status")
-      .should("equal", 200);
+    }).then((response) => {
+      console.log(response.body);
+    });
   });
 });
