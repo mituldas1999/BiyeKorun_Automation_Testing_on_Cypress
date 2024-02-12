@@ -8,8 +8,10 @@ describe("As an user, I should be able to create Initital chat", () => {
         Authorization: `Bearer ${accessToken}`,
       },
       body: [],
-    })
-      .its("status")
-      .should("equal", 200);
+    }).then((response) => {
+      const chatId = response.body.chats[0]._id;
+      console.log(chatId);
+      cy.writeFile("cypress/fixtures/chatId.json", { newChatId: chatId });
+    });
   });
 });
