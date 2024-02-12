@@ -8,7 +8,7 @@ describe("User should be able to create admin Staff", () => {
         Authorization: `Bearer ${adminAccessToken}`,
       },
       body: {
-        email: "ashrafulislamashik960@gmail.com",
+        email: "dasia_nitzsche@hotmail.com",
         firstName: "Ashraful",
         lastName: "islamashik",
         permission: ["64eadb6a5bd5576dd4df3cd8"],
@@ -21,7 +21,9 @@ describe("User should be able to create admin Staff", () => {
         password: "Ashik@2432",
       },
     }).then((response) => {
-      console.log(response.body);
+      console.log(response.body.staff._id);
+      // const staffId = response.body.staff._id;
+      // cy.writeFile("cypress/fixtures/staffId.json", { AdminStaffId: staffId });
     });
   });
 });
