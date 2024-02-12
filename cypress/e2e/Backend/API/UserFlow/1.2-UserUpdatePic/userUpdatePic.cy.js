@@ -11,7 +11,7 @@ describe("As an user I should be able to update my profile picture", () => {
 
       cy.request({
         method: "PATCH",
-        url: "/api/user/update-image/65c873db8323ed5398bee8e5",
+        url: "/api/user/update-image/65c9832f8323ed5398bef403",
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

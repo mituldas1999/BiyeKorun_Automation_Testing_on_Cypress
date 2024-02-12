@@ -1,5 +1,5 @@
 describe("As an user I should be able to update my email", () => {
-  it("Checking if an user can update their email or not", () => {
+  it.skip("Checking if an user can update their email or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "PATCH",
@@ -8,6 +8,7 @@ describe("As an user I should be able to update my email", () => {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
+        // need valid OTP
         email: "www.savage582@gmail.com",
         otp: "230445",
       },
