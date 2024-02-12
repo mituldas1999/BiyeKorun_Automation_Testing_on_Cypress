@@ -1,21 +1,25 @@
 describe("As an user I can remove a user from channel", () => {
-  let newUserId; // Declare newUserId variable
+  let newUserChatId;
+  let groupId;
   before(() => {
-    cy.readFile("cypress/fixtures/userId.json").then((data) => {
-      newUserId = data.userId; // Store the group ID in the variable
-      console.log(newUserId);
+    cy.readFile("cypress/fixtures/chatUserId.json").then((data) => {
+      newUserChatId = data.userChatId; // Store the group ID in the variable
+      console.log(newUserChatId);
+    });
+    cy.readFile("cypress/fixtures/groupId.json").then((data) => {
+      groupId = data.id; // Store the group ID in the variable
     });
   });
   it("Checking if an user can remove an user from a channel or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "PATCH",
-      url: `/api/chat/channel/remove-user/${newUserId}`,
+      url: `/api/chat/channel/remove-user/${groupId}`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        member: `${newUserId}`,
+        member: `${newUserChatId}`,
       },
     }).then((response) => {
       console.log(response.body);

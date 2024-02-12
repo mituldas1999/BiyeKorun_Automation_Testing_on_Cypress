@@ -3,7 +3,7 @@ describe("User should be able get marked notification", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "PATCH",
-      url: "/api/user/notification/mark-read/65925f3618d8349e5b99fc99",
+      url: "/api/notification/mark-read/65925f3618d8349e5b99fc99",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

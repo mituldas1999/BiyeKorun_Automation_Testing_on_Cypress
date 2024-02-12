@@ -1,11 +1,11 @@
 describe("As an admin I would be able to see all the payments", () => {
   it("Checking if the admin can see all the payment information or not", () => {
-    const accessToken = Cypress.env("accessToken");
+    const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
       method: "POST",
       url: "/api/payment/get-all-payments",
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${adminAccessToken}`,
       },
       body: {
         page: 1,
