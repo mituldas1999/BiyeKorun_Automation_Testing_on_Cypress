@@ -3,7 +3,7 @@ describe("As an admin, I can see the user statistic", () => {
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
       method: "POST",
-      url: "/api/user/search",
+      url: "/api/dashboard/user-reg-statistics",
       headers: {
         Authorization: `Bearer ${adminAccessToken}`,
       },

@@ -1,5 +1,5 @@
-describe("As an user, I should be able to update on the admin profile", () => {
-  it("Checking if the admin can update the request status", () => {
+describe("As an Admin I should be able to edit my profile", () => {
+  it("Checking if an admin can edit his profile or not", () => {
     // There is an error in this code
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.log(adminAccessToken);

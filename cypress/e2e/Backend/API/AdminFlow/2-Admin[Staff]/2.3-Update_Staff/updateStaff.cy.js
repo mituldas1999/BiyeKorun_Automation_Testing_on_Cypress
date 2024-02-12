@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-describe("User should be able to update admin Staff", () => {
+describe("Admin should be able to update user Staff", () => {
   let staffId;
   before(() => {
     cy.readFile("cypress/fixtures/staffId.json").then((data) => {
@@ -7,7 +7,7 @@ describe("User should be able to update admin Staff", () => {
       cy.log(staffId); //
     });
   });
-  it("Checking if an user can update admin Staff", () => {
+  it("Checking if an admin can update user Staff", () => {
     const newUserEmail = faker.internet.email();
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
