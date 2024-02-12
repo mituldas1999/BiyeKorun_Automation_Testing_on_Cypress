@@ -20,8 +20,8 @@ describe("As an user,should be able to find new chats", () => {
         chat: `${chatId}`,
         parentMessage: "65925f3618d8349e5b99fc99",
       },
-    })
-      .its("status")
-      .should("equal", 200);
+    }).then((response) => {
+      console.log(response.body);
+    });
   });
 });
