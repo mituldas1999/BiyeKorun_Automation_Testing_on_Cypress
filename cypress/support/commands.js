@@ -45,7 +45,25 @@ Cypress.Commands.add("loginAndGetAccessToken", (email, password) => {
       return accessToken;
     });
 });
+Cypress.Commands.add("loginAndGetAdminAccessToken", (email, password) => {
+  return cy
+    .request({
+      method: "POST",
+      url: "/api/user/login",
+      body: {
+        email: email,
+        password: password,
+      },
+    })
+    .then((response) => {
+      expect(response.status).to.eq(200);
+      const adminAccessToken = response.body.token.accessToken;
+      Cypress.env("adminAccessToken", adminAccessToken);
+      return adminAccessToken;
+    });
+});
 //User Need to be change Email and Password
 beforeEach(() => {
   cy.loginAndGetAccessToken("ashrafulislamashik960@gmail.com", "Ashik@2433");
+  cy.loginAndGetAdminAccessToken("mituldas751@gmail.com", "Mitul@23");
 });

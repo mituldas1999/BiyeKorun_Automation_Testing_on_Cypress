@@ -1,25 +1,22 @@
 describe("As an user, I should be able to update on the admin profile", () => {
-  let updatedFriendId;
-  before(() => {
-    cy.readFile("cypress/fixtures/updatedFriendId.json").then((data) => {
-      updatedFriendId = data.newId; // Store the group ID in the variable
-    });
-  });
   it("Checking if the admin can update the request status", () => {
     // There is an error in this code
-
-    const accessToken = Cypress.env("accessToken");
+    const adminAccessToken = Cypress.env("adminAccessToken");
+    cy.log(adminAccessToken);
     cy.request({
       method: "PATCH",
       url: "/api/admin/editprofile",
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${adminAccessToken}`,
       },
       body: {
-        firstName: "Mitul",
-        lastName: "Das",
+        firstName: "DAS",
+        lastName: "Mitul",
         gender: "Male",
-        phone: "+8801949338805",
+        phone: {
+          number: "1775069169",
+          countryCode: "880",
+        },
       },
     }).then((response) => {
       console.log(response.body);
