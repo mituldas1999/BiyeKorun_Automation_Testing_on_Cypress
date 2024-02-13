@@ -6,7 +6,6 @@ describe("Admin should be able to Delete user Staff member", () => {
       cy.log(deleteRole); //
     });
   });
-  //Please Remove Skip ................
   it("Checking if an user can Delete admin Staff", () => {
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
