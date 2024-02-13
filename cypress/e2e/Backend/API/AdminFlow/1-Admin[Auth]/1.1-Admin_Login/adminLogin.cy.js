@@ -10,12 +10,10 @@ describe("Get Auth Token", () => {
     }).then((response) => {
       expect(response.status).to.eq(200);
       const AdminAccessToken = response.body.token.accessToken;
-
       // Set the access token as an environment variable
       Cypress.env("AdminAccessToken", AdminAccessToken);
       console.log(response);
       console.log(AdminAccessToken);
-
       cy.log(AdminAccessToken);
     });
   });

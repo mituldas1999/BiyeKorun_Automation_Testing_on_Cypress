@@ -8,7 +8,12 @@ describe("As an admin I should be able to see all the staff information", () => 
         Authorization: `Bearer ${adminAccessToken}`,
       },
     }).then((response) => {
-      console.log(response.body);
+      cy.log(response.body.data[0]._id);
+      const staffroleId = response.body.data[0]._id;
+      cy.log(staffroleId); //
+      cy.writeFile("cypress/fixtures/staffroleId.json", {
+        AdminStaffroleId: staffroleId,
+      });
     });
   });
 });
