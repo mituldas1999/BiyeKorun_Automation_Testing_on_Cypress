@@ -16,19 +16,16 @@ describe("User can upload file form chats through API", () => {
       formData.append("file", blob, "Test_file.doc");
 
       // Send the request with the FormData object
-      // Note: 'Content-Type' header may need to be removed or modified
       cy.request({
         method: "POST",
         url: "/api/chat/file",
         headers: {
           Authorization: `Bearer ${accessToken}`,
-          // 'Content-Type': 'multipart/form-data', // This line might need to be removed or modified
+          "Content-Type": "multipart/form-data", // Set the correct Content-Type header
         },
         body: formData,
-        // Adding 'form: true' to indicate the body is a FormData object
-        // Note: This is specific to how Cypress handles FormData
-        form: true,
       }).then((response) => {
+        // Check the response status code and the response body
         console.log(response);
       });
     });
