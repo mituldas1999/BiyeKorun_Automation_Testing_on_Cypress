@@ -22,12 +22,12 @@ describe("User can upload file form chats through API", () => {
         url: "/api/chat/file",
         headers: {
           Authorization: `Bearer ${accessToken}`,
-          // 'Content-Type': 'multipart/form-data', // This line might need to be removed or modified
+          "Content-Type": "multipart/form-data", // This line might need to be removed or modified
         },
         body: formData,
         // Adding 'form: true' to indicate the body is a FormData object
         // Note: This is specific to how Cypress handles FormData
-        form: true,
+        // form: true,
       }).then((response) => {
         console.log(response);
       });
