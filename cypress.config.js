@@ -1,3 +1,4 @@
+// import 'cypress-mochawesome-reporter/register';
 const { defineConfig } = require("cypress");
 require("dotenv").config();
 
