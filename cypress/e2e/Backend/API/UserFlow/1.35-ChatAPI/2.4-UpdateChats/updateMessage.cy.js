@@ -1,5 +1,17 @@
-describe("As an user, I should be able to create Initital chat", () => {
-  it("Checking if a user can create Initital chat or not", () => {
+describe("As an user, I should be able to create Initial chat", () => {
+  let chatId;
+  let chatMemberId;
+  before(() => {
+    cy.readFile("cypress/fixtures/chatId.json").then((data) => {
+      chatId = data.newChatId;
+      console.log(chatId);
+    });
+    cy.readFile("cypress/fixtures/chatMemberId.json").then((data) => {
+      chatMemberId = data.newChatMemberId;
+      console.log(chatMemberId);
+    });
+  });
+  it("Checking if a user can create Initial chat or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "POST",
@@ -8,8 +20,8 @@ describe("As an user, I should be able to create Initital chat", () => {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        member: "65c0a4d2ebf53acbef2765e7",
-        chat: "65c0a4d1ebf53acbef2765e5",
+        member: `${chatMemberId}`,
+        chat: `${chatId}`,
         actionType: "mute",
         selectedOption: 1,
         role: "admin",

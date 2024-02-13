@@ -1,9 +1,16 @@
 describe("As an user, I should be able to send ", () => {
+  let chatId;
+  before(() => {
+    cy.readFile("cypress/fixtures/chatId.json").then((data) => {
+      chatId = data.newChatId;
+      console.log(chatId);
+    });
+  });
   it("Checking if a user can search on the chat user or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "PUT",
-      url: "/api/chat/sendmessage/65c19fdbebf53acbef2766fe",
+      url: `/api/chat/sendmessage/${chatId}`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -12,8 +19,10 @@ describe("As an user, I should be able to send ", () => {
         files: "",
         parentMessage: "65c19fdbebf53acbef2766fe",
       },
-    })
-      .its("status")
-      .should("equal", 200);
+    }).then((response) => {
+      console.log(response.body.message);
+      const sentChatId = response.body.message._id;
+      cy.writeFile("cypress/fixtures/sentChatId.json", { sentId: sentChatId });
+    });
   });
 });

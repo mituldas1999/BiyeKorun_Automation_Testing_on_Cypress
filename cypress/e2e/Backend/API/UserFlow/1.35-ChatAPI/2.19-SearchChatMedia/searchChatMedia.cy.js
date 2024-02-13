@@ -1,16 +1,16 @@
 describe("As an user, I should be able to Search Chats Media on the message ", () => {
-  let newUserId; // Declare newUserId variable
+  let sentChatId;
   before(() => {
-    cy.readFile("cypress/fixtures/userId.json").then((data) => {
-      newUserId = data.userId; //
-      console.log(newUserId);
+    cy.readFile("cypress/fixtures/sentChatId.json").then((data) => {
+      sentChatId = data.sentId;
+      console.log(sentChatId);
     });
   });
   it("Checking if a user can Search Chats Media user or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "POST",
-      url: `/api/chat/media/${newUserId}`,
+      url: "/api/chat/media/65c9d091c6a9b0c218a595cf",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
