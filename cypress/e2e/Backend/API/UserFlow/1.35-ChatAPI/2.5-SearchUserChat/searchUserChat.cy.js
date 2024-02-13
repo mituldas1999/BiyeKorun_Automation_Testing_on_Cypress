@@ -17,11 +17,11 @@ describe("As an user, I should be able to search on the chat user", () => {
         limit: 10,
       },
     }).then((response) => {
-      const newUserChatId = response.body.results[0]._id;
+      const newUserChatId = response.body.results[1]._id;
       cy.writeFile("cypress/fixtures/chatUserId.json", {
         userChatId: newUserChatId,
       });
-      console.log(response.body.results);
+      console.log(response.body.results[1]._id);
     });
   });
 });

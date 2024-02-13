@@ -1,14 +1,13 @@
 describe("As an user, I should be able to create Initial chat", () => {
-  let chatId;
-  let chatMemberId;
+  let newUserChatId;
+  let groupId;
   before(() => {
-    cy.readFile("cypress/fixtures/chatId.json").then((data) => {
-      chatId = data.newChatId;
-      console.log(chatId);
+    cy.readFile("cypress/fixtures/groupId.json").then((data) => {
+      groupId = data.id; //
     });
-    cy.readFile("cypress/fixtures/chatMemberId.json").then((data) => {
-      chatMemberId = data.newChatMemberId;
-      console.log(chatMemberId);
+    cy.readFile("cypress/fixtures/chatUserId.json").then((data) => {
+      newUserChatId = data.userChatId; //
+      console.log(newUserChatId);
     });
   });
   it("Checking if a user can create Initial chat or not", () => {
@@ -20,11 +19,9 @@ describe("As an user, I should be able to create Initial chat", () => {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        member: `${chatMemberId}`,
-        chat: `${chatId}`,
-        actionType: "mute",
-        selectedOption: 1,
-        role: "admin",
+        member: `${newUserChatId}`,
+        chat: `${groupId}`,
+        actionType: "unmute",
       },
     })
       .its("status")

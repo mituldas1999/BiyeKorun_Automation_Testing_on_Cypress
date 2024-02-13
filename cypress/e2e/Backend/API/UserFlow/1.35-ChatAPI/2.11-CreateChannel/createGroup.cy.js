@@ -19,11 +19,7 @@ describe("As an user, I should be able to create Group", () => {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        users: [
-          "64eecac80620579ac6fb3204",
-          "64eecac80620579ac6fb3204",
-          "64eecac80620579ac6fb3204",
-        ],
+        users: ["64eecac80620579ac6fb3204", `${newUserId}`],
         name: groupname, //Every to change group nameS
         description: "Channel/Group description",
         isPublic: true,
@@ -32,6 +28,7 @@ describe("As an user, I should be able to create Group", () => {
     }).then((res) => {
       console.log(res.body.chat._id);
       const groupId = res.body.chat._id;
+      console.log(res.body);
       // set the group id dynamically to access it from any where by using cy.readFile assertion method
       cy.writeFile("cypress/fixtures/groupId.json", { id: groupId });
     });
