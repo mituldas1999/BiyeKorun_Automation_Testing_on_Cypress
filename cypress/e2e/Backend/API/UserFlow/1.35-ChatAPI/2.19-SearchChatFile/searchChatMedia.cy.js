@@ -10,12 +10,12 @@ describe("As an user, I should be able to Search Chats Media on the message ", (
     const accessToken = Cypress.env("accessToken");
     cy.request({
       method: "POST",
-      url: "/api/chat/media/65c9d091c6a9b0c218a595cf",
+      url: `/api/chat/media/${sentChatId}`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        limit: 10,
+        limit: 50,
         page: 11,
         type: "image/jpeg",
       },
