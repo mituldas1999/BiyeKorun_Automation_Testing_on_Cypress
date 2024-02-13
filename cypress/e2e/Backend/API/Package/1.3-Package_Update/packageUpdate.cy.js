@@ -1,9 +1,16 @@
-describe("As an user I should be able to purchases package", () => {
-  it("Checking if an user can purchase any package or not", () => {
+describe("As an user I should be able to update my package", () => {
+  let packageId;
+  before(() => {
+    cy.readFile("cypress/fixtures/packageId.json").then((data) => {
+      packageId = data.newId;
+      console.log(packageId);
+    });
+  });
+  it("Checking if an user can update their package or not", () => {
     const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
-      method: "POST",
-      url: "/api/package/create",
+      method: "PATCH",
+      url: `/api/package/update/${packageId}`,
       headers: {
         Authorization: `Bearer ${adminAccessToken}`,
       },
@@ -38,12 +45,7 @@ describe("As an user I should be able to purchases package", () => {
         },
       },
     }).then((response) => {
-      console.log(response.body.data._id);
-      const packageId = response.body.data._id;
-      cy.writeFile("cypress/fixtures/packageId.json", {
-        newId: packageId,
-      });
-      console.log(packageId);
+      console.log(response.body);
     });
   });
 });
