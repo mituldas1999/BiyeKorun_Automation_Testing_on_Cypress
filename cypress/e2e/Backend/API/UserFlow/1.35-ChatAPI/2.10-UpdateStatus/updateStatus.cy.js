@@ -7,12 +7,12 @@ describe("As an user, I should be able to react on the message ", () => {
     });
   });
   it("Checking if a user can react on the chat user or not", () => {
-    const accessToken = Cypress.env("accessToken");
+    const adminAccessToken = Cypress.env("adminAccessToken");
     cy.request({
       method: "PATCH",
       url: `/api/chat/update-status/${sentChatId}`,
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${adminAccessToken}`,
       },
       body: {
         status: "sent",
