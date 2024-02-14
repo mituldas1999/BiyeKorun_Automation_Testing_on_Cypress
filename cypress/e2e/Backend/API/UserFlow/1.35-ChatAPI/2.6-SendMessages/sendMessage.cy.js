@@ -20,7 +20,7 @@ describe("As an user, I should be able to send ", () => {
         parentMessage: "65c19fdbebf53acbef2766fe",
       },
     }).then((response) => {
-      console.log(response.body.message);
+      console.log(response.body);
       const sentChatId = response.body.message._id;
       cy.writeFile("cypress/fixtures/sentChatId.json", { sentId: sentChatId });
     });
