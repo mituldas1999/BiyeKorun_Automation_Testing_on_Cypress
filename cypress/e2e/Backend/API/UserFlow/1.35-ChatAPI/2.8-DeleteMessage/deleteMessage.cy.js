@@ -1,4 +1,4 @@
-describe("As an user, I should be able to Update Messages ", () => {
+describe("As an user, I should be able to delete Messages ", () => {
   let sentChatId;
   before(() => {
     cy.readFile("cypress/fixtures/sentChatId.json").then((data) => {
@@ -6,16 +6,13 @@ describe("As an user, I should be able to Update Messages ", () => {
       console.log(sentChatId);
     });
   });
-  it("Checking if a user can Update on the chat user or not", () => {
+  it("Checking if a user can delete on the chat user or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
-      method: "PATCH",
-      url: `/api/chat/update/message/${sentChatId}`,
+      method: "DELETE",
+      url: `/api/delete/message/${sentChatId}`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
-      },
-      body: {
-        text: "<p>Hello</p>",
       },
     })
       .its("status")

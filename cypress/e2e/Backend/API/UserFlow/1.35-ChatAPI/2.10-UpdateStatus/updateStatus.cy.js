@@ -1,14 +1,21 @@
 describe("As an user, I should be able to react on the message ", () => {
+  let sentChatId;
+  before(() => {
+    cy.readFile("cypress/fixtures/sentChatId.json").then((data) => {
+      sentChatId = data.sentId;
+      console.log(sentChatId);
+    });
+  });
   it("Checking if a user can react on the chat user or not", () => {
     const accessToken = Cypress.env("accessToken");
     cy.request({
-      method: "PUT",
-      url: "/api/chat/react/65c1a034ebf53acbef27670d",
+      method: "PATCH",
+      url: `/api/chat/update-status/${sentChatId}`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
       body: {
-        symbol: "🥰",
+        status: "sent",
       },
     })
       .its("status")
