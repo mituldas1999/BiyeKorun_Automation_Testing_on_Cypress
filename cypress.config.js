@@ -8,6 +8,11 @@ module.exports = defineConfig({
     baseUrl: "https://staging-api.biyekorun.us",
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      // config.specPattern = [
+      //   "cypress/e2e/API/AdminFlow/1-Admin[Auth]/1.1-Admin_login/adminLogin.cy.js",
+      //   "cypress/e2e/API/AdminFlow/1-Admin[Auth]/1.2-Edit_Profile/editProfile.cy.js",
+      // ];
+      // return config;
     },
   },
 });
