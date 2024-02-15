@@ -2,15 +2,34 @@
 const cypress = require("cypress");
 
 async function runTests() {
-  await cypress.run({
-    spec: "cypress/e2e/Backend/API/1-AdminFlow/",
-  });
+  /*************** Admin Start *****************************/
   //   await cypress.run({
-  //     spec: "cypress/e2e/Backend/API/1-AdminFlow/1.01-Admin[Auth]/1.1.2-Edit_Profile/editProfile.cy.js",
+  //     spec: "cypress/e2e/Backend/API/1-AdminFlow/",
   //   });
-  //   await cypress.run({ spec: './cypress/integration/2-secondTest.spec.js' });
-  //   await cypress.run({ spec: './cypress/integration/3-thirdTest.spec.js' });
-  // Add more spec files as needed
+  /****************** Admin End ***********************************/
+  /*************** Package Start *****************************/
+  //   await cypress.run({
+  //     spec: "cypress/e2e/Backend/API/2-Packages/",
+  //   });
+  /*************** Package End *****************************/
+
+  /*************** Public API Start *****************************/
+  await cypress.run({
+    spec: "cypress/e2e/Backend/API/3-PublicAPI/",
+  });
+  /*************** Public API End *****************************/
+
+  /***************** User Flow Start ************************************/
+  //     await cypress.run({
+  //       spec: "cypress/e2e/Backend/API/4-UserFlow/0.1-Register/",
+  //     });
+  //     await cypress.run({
+  //       spec: "cypress/e2e/Backend/API/4-UserFlow/0.2-SendOTP/",
+  //     });
+  //   await cypress.run({
+  //     spec: "cypress/e2e/Backend/API/4-UserFlow/1.35-ChatAPI/",
+  //   });
+  /*************** User Flow End *****************************/
 }
 
 runTests();
