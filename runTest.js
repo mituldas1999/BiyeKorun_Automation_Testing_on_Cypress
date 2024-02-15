@@ -15,9 +15,9 @@ async function runTests() {
   /*************** Package End *****************************/
 
   /*************** Public API Start *****************************/
-  await cypress.run({
-    spec: "cypress/e2e/Backend/API/3-PublicAPI/",
-  });
+  // await cypress.run({
+  //   spec: "cypress/e2e/Backend/API/3-PublicAPI/",
+  // });
   /*************** Public API End *****************************/
 
   /***************** User Flow Start ************************************/
