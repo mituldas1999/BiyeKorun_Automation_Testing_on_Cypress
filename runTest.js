@@ -159,8 +159,6 @@ async function runTests() {
 
   /***************** Payment End ************************************/
 
-
-
   /***************** Notification Start ************************************/
   await cypress.run({
     spec: "cypress/e2e/Backend/API/4-UserFlow/1.32-Notification/1.01-GetMyNotification/",
@@ -177,7 +175,6 @@ async function runTests() {
 
   /***************** Notification End ************************************/
 
-
   /***************** Chat Start ************************************/
 
   await cypress.run({
@@ -190,49 +187,49 @@ async function runTests() {
     spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.3-ChatMassage/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.4-UpdateChats/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.4-CreateChannel/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.5-SearchUserChat/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.5-UpdateChannel/",
   });
   await cypress.run({
     spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.6-SendMessages/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.7-UpdateMessage/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.7-SearchUserChat/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.8-DeleteMessage/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.8-UpdateChats/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.9-ReactMessage/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.9-RemoveUser/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.10-UpdateStatus/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.10-AddUserChannel/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.11-CreateChannel/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.11-ArchiveChannel/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.12-ArchiveChannel/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.12-LeaveGroup/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.13-AddUserChannel/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.13-JoinChannel/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.14-UpdateChannel/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.14-ReactMessage/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.15-JoinChannel/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.15-UpdateMessage/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.16-RemoveUser/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.16-UploadFile/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.17-LeaveGroup/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.17-UpdateStatus/",
   });
   await cypress.run({
-    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.18-UploadFile/",
+    spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.18-DeleteMessage/",
   });
   await cypress.run({
     spec: "cypress/e2e/Backend/API/4-UserFlow/1.33-ChatAPI/2.19-SearchChatFile/",
