@@ -5,12 +5,18 @@ async function runTests() {
   await cypress.run({
     spec: "cypress/e2e/Backend/API/1-AdminFlow/",
   });
-  //   await cypress.run({
-  //     spec: "cypress/e2e/Backend/API/1-AdminFlow/1.01-Admin[Auth]/1.1.2-Edit_Profile/editProfile.cy.js",
-  //   });
-  //   await cypress.run({ spec: './cypress/integration/2-secondTest.spec.js' });
-  //   await cypress.run({ spec: './cypress/integration/3-thirdTest.spec.js' });
-  // Add more spec files as needed
+  await cypress.run({
+    spec: "cypress/e2e/Backend/API/2-Packages/",
+  });
+  await cypress.run({
+    spec: "cypress/e2e/Backend/API/3-Payment/",
+  });
+  await cypress.run({
+    spec: "cypress/e2e/Backend/API/4-UserFlow/",
+  });
+  await cypress.run({
+    spec: "cypress/e2e/Backend/API/5-PublicAPI/",
+  });
 }
 
 runTests();
