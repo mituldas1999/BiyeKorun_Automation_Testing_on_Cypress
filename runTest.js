@@ -1,5 +1,18 @@
 // run-tests.js example
 const cypress = require("cypress");
+const { merge } = require("mochawesome-merge");
+const marge = require("mochawesome-report-generator");
+
+async function generateReport() {
+  const jsonReport = await merge({
+    files: ["cypress/reports/*.json"],
+  });
+  await marge.create(jsonReport, {
+    reportDir: "cypress/reports",
+    inline: true,
+    charts: true,
+  });
+}
 
 async function runTests() {
   /*************** Admin Start *****************************/
@@ -250,7 +263,7 @@ async function runTests() {
   await cypress.run({
     spec: "cypress/e2e/Backend/API/4-UserFlow/1.38-User_Connction/",
   });
-
+  await generateReport();
   /*************** User Flow End *****************************/
 }
 
